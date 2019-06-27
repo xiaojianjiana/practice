@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			/* 作业 */
+			// 	对象字面量
+			// 			var hero = {
+			// 				name: '曹操',
+			// 				age: '45',
+			// 				weapon: '三叉戟',
+			// 				equipment: ['头盔', '靴子', '盔甲'],
+			// 				attack: function() {
+			// 					console.log(this.name + ':打死你');
+			// 				},
+			// 				run: function() {
+			// 					console.log(this.name + ':敌人来了，打不过赶紧跑')
+			// 				}
+			// 			}
+			// 			console.log(hero.name);
+			// 			console.log(hero.age);
+			// 
+			// 			hero.attack();
+			// 			hero.run();
+
+
+			// new Object(）创建对象
+			// var hero = new Object();
+			// //创建了一个新的空对象
+			// //属性
+			// hero.name = '黄忠';
+			// hero.weapon = '弓箭';
+			// hero.equipment = ['头盔', '靴子', '盔甲'];
+			// hero.blood = 100;
+			// //方法
+			// hero.attack = function(){
+			// 	console.log(this.name+':去射箭');
+			// }
+			// hero.run = function(){
+			// 	console.log(this.name+':打不过赶紧跑');
+			// }
+			// 
+			// hero.attack();
+
+
+			// 工厂函数创建对象
+			// 			function createHero(name, weapon, equipment, blood) {
+			// 				var hero = new Object(); /* 返回一个空的对象 */
+			// 				//属性
+			// 				hero.name = name;
+			// 				hero.weapon = weapon;
+			// 				hero.equipment = equipment;
+			// 				hero.blood = blood;
+			// 				//方法
+			// 				hero.attack = function() {
+			// 					console.log(this.name + ':攻击');
+			// 				}
+			// 				hero.run = function() {
+			// 					console.log(this.name + ':加速跑');
+			// 				}
+			// 				return hero;
+			// 			}
+			// 
+			// 			var hero1 = createHero('黄忠', '弓箭', ['靴子', '头盔'], 100);
+			// 			var hero2 = createHero('曹操', '长矛', ['靴子', '头盔'], 100);
+			// 			
+			// 			console.log(hero1.equipment);
+			// 			hero2.attack();
+
+			// 自定义构造函数
+			// 帕斯卡命名 第一个单词的第一个字母答谢,后续的每一个单词的第一个字母都大写
+			// function Hero(name,age,blood){
+			// 	// this动态的给对象增加成员
+			// 	// this只想了当前对象
+			// 	this.name = name;
+			// 	this.age = age;
+			// 	this.blood = blood;
+			// 	
+			// 	this.attack = function(){
+			// 		console.log(this.name+':攻击');
+			// 	}
+			// 	
+			// 	this.run = function(){
+			// 		console.log(this.name+':逃跑');
+			// 	}
+			// } 
+			// var hero1 = new Hero('黄忠',45,100);
+			// var hero2 = new Hero('曹操',44,1000);
+			// 
+			// console.log(hero1.name);
+			// console.log(hero2.age);
+
+
+			//自定义构造函数 Student
+			//属性:name age sex score
+			//方法:sayHi
+			// function Student(name, age, sex, score) {
+			// 	//属性
+			// 	this.name = name;
+			// 	this.age = age;
+			// 	this.sex = sex;
+			// 	this.score = score;
+			// 	//方法
+			// 	this.sayHi = function(){
+			// 		console.log('大家好我的名字是：'+this.name+'\n'+'我今年'+this.age+'岁');
+			// 	}
+			// }
+			// 
+			// var student1 = new Student('zaki',22,'男',89);
+			// var student2 = new Student('baobao',23,'女',99);
+			// 
+			// student1.sayHi();
+
+			//new的执行过程
+			//1.在内存中创建了一个空的对象
+			//2.让构造函数中的this指向刚刚创建的对象
+			//3.执行构造函数,在构造函数中设置属性和方法(当然也可以做其他事情)
+			//4.返回了当前对象
+
+
+			//this出现在一下位置,分别代表了什么
+			//1.函数中  this 指向window 窗口
+			//2.在方法中  this 指向的是这个方法所属的对象
+			//3.构造函数中	this 指向的是构造函数所创建的对象
+
+			// 函数
+			// function fn(){
+			// 	console.log(this);
+			// }
+			// fn();
+
+			// 对象
+			// var obj = {
+			// 	name:'张三',
+			// 	fn:function (){
+			// 		console.log(this);
+			// 	}
+			// }
+			// obj.fn();
+
+			// 构造函数
+			// function Fn() {
+			// 	console.log(this);
+			// }
+			// var o = new Fn();
+
+
+
+			// 遍历一个对象的所有属性和方法
+			// var o = {};
+			// for (var i = 0; i < 10; i++) {
+			// 	o['a' + i] = i * 2;
+			// }
+			//  for(var key in o){
+			// 	 console.log(key+'---'+o[key]);
+			//  }
+			
+			
+			// 删除属性 delete 删除对象的属性或者是方法
+			var o ={
+				name:'abc',
+				say:function(){
+					
+				}
+			}
+			
+			console.log(o.name);
+			delete o.name;
+			console.log(o.name);
+			
+			console.log(o.say);
+			delete o.say;
+			console.log(o.say);
+		</script>
+
+	</head>
+	<body>
+
+	</body>
+</html>

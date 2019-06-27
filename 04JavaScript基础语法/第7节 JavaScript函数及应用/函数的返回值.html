@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			// - 求一组数中的最大值
+			// function getMax(arr) {
+			// 	var max = arr[0];
+			// 	for (var i = 0; i < arr.length; i++) {
+			// 		if (max < arr[i]) {
+			// 			max = arr[i];
+			// 		}
+			// 	}
+			// 	//函数的返回值
+			// 	return max;
+			// }
+			//通过一个变量来接收函数的返回值
+			// var Array = [1, 2, 3, 5, 6, 7, 3];
+			// var max = getMax(Array);
+			// console.log(max);
+
+
+			// - 求一组数中的最小值
+			// function getMin(arr) {
+			// 	var min = arr[0];
+			// 	for (var i = 0; i < arr.length; i++) {
+			// 		if (min > arr[i]) {
+			// 			min = arr[i];
+			// 		}
+			// 	}
+			// 	//函数的返回值
+			// 	return min;
+			// }
+			// //通过一个变量来接收函数的返回值
+			// var Array = [1, 2, 3, 5, 6, 7, 3];
+			// var min = getMin(Array);
+			// console.log(min);
+
+
+			// - 求阶乘
+			// 			var result = 1;
+			// 
+			// 			function jiecheng(n) {
+			// 				for (var i = 1; i <= n; i++) {
+			// 					result *= i;
+			// 				}
+			// 				return result;
+			// 			}
+			// 			var result = jiecheng(4);
+			// 			console.log(result);
+
+
+			// - 求1!+2!+3!+....+n!
+			// 			function jiecheng(n) {
+			// 				var result = 1;
+			// 				for (var i = 1; i <= n; i++) {
+			// 					result *= i;
+			// 				}
+			// 				return result;
+			// 			}
+			// 
+			// 			function getsum(n) {
+			// 				var sum = 0;
+			// 				for (var j = 1; j <= n; j++) {
+			// 					sum += jiecheng(j);
+			// 				}
+			// 				return sum;
+			// 			}
+			// 			console.log(getsum(5));
+
+			//另法
+			// function getSum(n) {
+			// 	var sumIn = 1;
+			// 	var sumOut = 0;
+			// 	for (var i = 1; i <= n; i++) {
+			// 		for (var j = 1; j <= i; j++) {
+			// 			sumIn *= j;
+			// 		}
+			// 		sumOut += sumIn;
+			// 		sumIn = 1;
+			// 	}
+			// 	return sumOut;
+			// }
+			// console.log(getSum(4));
+
+
+			//如果一个函数不需要返回值,可以不写return
+			//当函数中不屑return的时候.返回的是undefined
+			//return 后面可以什么都不跟,如果return后面什么都不跟,表明结束这个函数,后面的代码就不会再执行
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

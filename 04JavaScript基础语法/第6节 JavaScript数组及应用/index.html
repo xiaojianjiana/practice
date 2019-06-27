@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			/* 案例： */
+			// 求一组数中的所有数的和和平均值
+			// var sum = 0;
+			// var avg = 0;
+			// var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+			// for (var i = 0; i < arr.length; i++) {
+			// 	sum += arr[i];
+			// }
+			// avg = sum / arr.length;
+			// console.log(sum);
+			// console.log(avg);
+
+			// 求一组数中的最大值和最小值， 以及所在位置
+			// var numbers = [81, 123, 42, 55, 12, 128, 45, 11];
+			// var max = numbers[0];
+			// var min = numbers[0];
+			// var maxIndex;
+			// var minIndex;
+			// for (var i = 1; i < numbers.length; i++) {
+			// 	if (max < numbers[i]) {
+			// 		max = numbers[i];
+			// 		maxIndex = i;
+			// 	}
+			// 	if (min > numbers[i]) {
+			// 		min = numbers[i];
+			// 		minIndex = i;
+			// 	}
+			// }
+			// document.write('最大值为：'+max+'<br>');
+			// document.write('最小值为：'+min+'<br>');
+			// document.write('最大值位置为：'+(maxIndex+1)+'<br>');
+			// document.write('最小值位置为：'+(minIndex+1));
+
+			// 将字符串数组用 | 或其他符号分割
+			// 1.不完善写法
+			// var names = ['张三', '李四', '王五', '王二麻子'];
+			// var str = '';
+			// var seperator = '!';
+			// for (var i = 0; i < names.length; i++) {
+			// 	str = str + names[i] + seperator;
+			// }
+			// console.log(str);
+			// 2.完善方法
+			// var names = ['张三', '李四', '王五', '王二麻子'];
+			// var str = names[0];
+			// var seperator = '|';
+			// for (var i = 1; i < names.length; i++) {
+			// 	str = str + seperator + names[i];
+			// }
+			// console.log(str);
+
+			// 要求将数组中的0项去掉， 将不为0的值存入一个新的数组， 生成新的数组	*******
+			// var numbers = [0, 81, 123, 0, 42, 55, 12, 128, 45, 11];
+			// var newArray = [];
+			// for (var i = 0; i < numbers.length; i++) {
+			// 	if (numbers[i] !== 0) {
+			// 		newArray[newArray.length] = numbers[i];
+			// 	}
+			// }
+			// console.log(newArray);
+
+			// 翻转数组 
+			// var numbers = [0, 81, 123, 0, 42, 55, 12, 128, 45, 11];
+			// var newArray = [];
+			// for (var i = 0; i < numbers.length; i++) {
+			// 	newArray[numbers.length - i - 1] = numbers[i];
+			// }
+			// console.log(newArray);
+
+			// 冒泡排序， 从小到大排序
+			// var numbers = [0, 81, 123, 0, 42, 0, 12, 128, 45, 11];
+			// var count = 0;
+			// for (var i = 0; i < numbers.length - 1; i++) {
+			// 	count++;
+			// 	for (var j = 0; j < numbers.length - i - 1; j++) {
+			// 		count++;
+			// 		if (numbers[j] > numbers[j + 1]) {
+			// 			var max = numbers[j];
+			// 			numbers[j] = numbers[j + 1]
+			// 			numbers[j + 1] = max;
+			// 		}
+			// 	}
+			// }
+			// console.log(numbers);
+			// console.log(count);
+
+			// 冒泡算法优化 简化步骤
+			// var numbers = [0, 81, 123, 0, 42, 0, 12, 128, 45, 11];
+			// var count = 0;
+			// var isSort = true;
+			// for (var i = 0; i < numbers.length - 1; i++) {
+			// 	count++;
+			// 	for (var j = 0; j < numbers.length - i - 1; j++) {
+			// 		isSort = false;
+			// 		count++;
+			// 		if (numbers[j] > numbers[j + 1]) {
+			// 			var max = numbers[j];
+			// 			numbers[j] = numbers[j + 1]
+			// 			numbers[j + 1] = max;
+			// 		}
+			// 	}
+			// 	if (isSort) {
+			// 		break;
+			// 	}
+			// }
+			// console.log(numbers);
+			// console.log(count);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

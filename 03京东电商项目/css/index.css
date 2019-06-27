@@ -1,0 +1,313 @@
+/* 中间分类模块 start */
+/* 导航栏部分 start */
+.grid {
+	height: 480px;
+}
+
+.grid-col1 {
+	width: 190px;
+	height: 100%;
+	background-color: #6E6568;
+	/* 下面属性不是给字的 是给反斜杠的 */
+	color: #FFFFFF;
+	font-size: 14px;
+	position: relative;
+}
+
+.ad{
+	width: 250px;
+	height: 480px;
+	/* background-color: pink; */
+	position: absolute;
+	top: 0;
+	left: -250px;
+}
+
+.ad-r {
+	position: absolute;
+	top: 0;
+	left: 250px;
+	z-index: 999;
+	width: 0;
+	height: 480px;
+	background: url(../images/ad-r.jpg);
+	/* 这个盒子做动画，所以给它添加过渡 */
+	transition: all 0.8s;
+}
+
+.ad:hover .ad-r {  
+	/* 鼠标经过 ad 这个广告大盒子的时候， 里面的这个叫 ad-r的盒子的宽度由0变为 990 */
+	width: 990px;
+}
+
+.grid-col1 a {
+	/* 下面是给链接文字的属性 */
+	color: #FFFFFF;
+	font-size: 14px;
+	margin: 0 3px;
+}
+
+.grid-col1 a:hover {
+	color: #F10215;
+}
+
+.grid-col1 ul {
+	padding: 10px 0;
+}
+
+.grid-col1 ul li {
+	padding-left: 12px;
+	/* margin-left 是外边距，如果需要加鼠标经过效果则不能使用*/
+	height: 29px;
+	line-height: 26px;
+}
+
+.grid-col1 ul li:hover {
+	background-color: #9c9698;
+}
+
+/* 导航栏部分 end */
+
+/* 展示页 start */
+.grid-col2 {
+	width: 790px;
+	height: 100%;
+	/* background-color: purple; */
+	margin-left: 10px;
+}
+
+.grid-col2-b div {
+	float: left;
+	margin-top: 10px;
+}
+
+.grid-col2-b div:last-child {
+	float: right;
+	margin-top: 10px;
+}
+
+/* 展示页箭头部分 */
+.grid-col2-t {
+	position: relative;
+}
+
+.arrow-l,
+.arrow-r {
+	position: absolute;
+	top: 50%;
+	width: 30px;
+	height: 60px;
+	background: rgba(0, 0, 0, 0.1);
+	transform: translateY(-50%);
+	text-align: center;
+	line-height: 60px;
+	font-size: 20px;
+	color: rgba(255, 255, 255, 0.8);
+	font-family: arial;
+	font-weight: normal;
+}
+
+.arrow-r {
+	right: 0;
+}
+
+.circle {
+	width: 175px;
+	height: 20px;
+	background: rgba(255, 255, 255, 0.3);
+	position: absolute;
+	/* 下面两行使得轮播栏居中对齐 */
+	left: 50%;
+	transform: translate(-50%);
+	border-radius: 10px;
+	padding-left: 8px;
+	bottom: 20px;
+	box-sizing: border-box;
+}
+
+.circle li {
+	width: 12px;
+	height: 12px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	float: left;
+	margin: 4px 4px 0;
+	cursor: pointer;
+	/* 鼠标经过li的时候变小手*/
+}
+
+.circle .current {
+	background-color: #f10215;
+}
+
+/* 展示页 end */
+
+/* 右侧服务栏部分 */
+.grid-col3 {
+	width: 190px;
+	height: 100%;
+	/* background-color: skyblue; */
+}
+
+/* 登录模块 */
+.login {
+	height: 115px;
+	border-bottom: 1px solid #ccc;
+	background-color: #FFFFFF;
+	padding: 15px 15px;
+	box-sizing: border-box;
+}
+
+.login-t {
+	width: 95px;
+	height: 60px;
+	line-height: 20px;
+	font-size: 12px;
+	white-space: nowrap;
+	/* 强制一行内显示 */
+	overflow: hidden;
+	/* 溢出隐藏 */
+	text-overflow: ellipsis;
+	/* 超出的部分显示省略号 */
+	color: #666666;
+	padding-left: 60px;
+	/* 这里给padding 把文字挤过来 */
+	position: relative;
+}
+
+.login-t a {
+	color: #666666;
+}
+
+.login-t a:hover {
+	color: #F10215;
+}
+
+.login-t .user-info {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(../images/sprite_userinfo@1x.png) no-repeat -70px 0;
+}
+
+.user-info img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.login-b a {
+	display: inline-block;
+	/* 避免使用浮动 */
+	width: 70px;
+	height: 20px;
+	line-height: 20px;
+	border: 2px solid #F10215;
+	margin-right: 3px;
+	text-align: center;
+	color: #F10215;
+}
+
+.login-b a:hover {
+	background-color: #F10215;
+	color: #FFFFFF;
+}
+
+/* 新闻公告模块 */
+.news {
+	height: 155px;
+	border-bottom: 1px solid #ccc;
+	background-color: #FFFFFF;
+	padding: 7px 13px 0;
+	box-shadow: border-box;
+}
+
+.news-t {
+	height: 19px;
+	border-bottom: 1px solid #CCCCCC;
+	position: relative;
+}
+
+.news-t a {
+	float: left;
+	height: 17px;
+	line-height: 17px;
+}
+
+.cuxiao {
+	width: 38px;
+	border-right: 1px solid #CCCCCC;
+}
+
+.gg {
+	margin-left: 15px;
+}
+
+.news-t .more {
+	float: right;
+}
+
+.news-t div {
+	width: 28px;
+	height: 2px;
+	background-color: #F10215;
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+}
+
+.news-b ul{
+	padding-top: 20px;
+}
+
+.news-b li{
+	height: 23px;
+	line-height: 23px;
+}
+
+/* 服务扩展模块 */
+.expand {
+	height: 208px;
+	background-color: #FFFFFF;
+	overflow: hidden;	/* expand这个宽度继承了 父亲 190宽度 */
+}
+
+.expand ul{
+	width: 195px; 
+	/* 父亲是190px 但是里面的li 宽度超过了190px 单摆放不开4个li 此时让ul宽度变大 */
+}
+
+.expand li{
+	width: 47px;
+	height: 69px;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	float: left;
+}
+
+.expand  li a {
+	display: block;
+	padding-top: 15px;
+	text-align: center;
+}
+
+.expand  li i {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background: url(../images/sprite_fs@1x.png) no-repeat;
+	width: 18px;
+	height: 23px;
+	background-position: -5px -88px;
+}
+
+.expand  li:first-child i {
+	width: 18px;
+	height: 23px;
+	background-position: -5px -88px;
+}
+
+/* 中间分类模块 end */

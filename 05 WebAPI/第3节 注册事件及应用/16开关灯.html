@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="关灯" />
+
+		<script type="text/javascript">
+			// 是否开灯 false 关灯状态 true 开灯状态
+			var btn = document.getElementById('btn');
+			var isOpen = true;
+			btn.onclick = function() {
+				if (isOpen) {
+					document.body.style.background = 'black';
+					this.value = '开灯';
+					isOpen = false;
+				} else {
+					document.body.style.background = 'white';
+					this.value = '关灯';
+					isOpen = true;
+				}
+			}
+		</script>
+	</body>
+</html>

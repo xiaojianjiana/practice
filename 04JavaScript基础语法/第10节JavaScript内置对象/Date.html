@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<script type="text/javascript">
+			// Date 是一个构造函数,首先要通过new Date(）来创建日期实力(对象),实力成员
+			// var d = new Date();
+			// console.log(d);
+
+			//GMT 格林尼治时间  世界标准时间
+			//GMT+0800(中国标准时间)
+
+			//日期构造函数Date()
+			//1.空构造函数 获取当前时间
+			// var d = new Date();
+			// console.log(d);
+
+			//2.构造函数中构造毫秒值
+			// var d = new Date(1570712700000);
+			// console.log(d);
+
+			//3.可以输入日期形式的字符串
+			// var d = new Date('1988-2-3 8:8:8');
+			// console.log(d);
+
+			//4.可以传入数字
+			// var d = new Date(1928,4,22);
+			// console.log(d);
+			// console.log(d.valueOf());
+
+
+
+			//如何获取日期对象的毫秒值
+			// var d = new Date();
+			//获取日期对象的毫秒值 不用我们调用
+			// console.log(d.valueOf());
+			// 和valueof的作用是一样的
+			// console.log(d.getTime()); 
+
+			// 获取当前时间的毫秒之  静态成员
+			// var num = Date.now();
+			// console.log(num);
+
+
+			// + 在这里是取正
+			// var num = + new Date();
+			// console.log(num);
+
+
+			var d = new Date();
+			// 打印日期对象的时候,内部调用了toString
+			// console.log(d);
+			// console.log(d.toString());
+			// 美国看时间方式
+			// console.log(d.toDateString());
+			// console.log(d.toTimeString());
+			// 符合国人看时间方式
+			// console.log(d.toLocaleDateString());
+			// console.log(d.toLocaleTimeString());
+
+
+			// 获取日期中的指定部分
+			// var d = new Date();
+			// console.log(d.getFullYear());
+			/* 注意：月份是从0开始的 */
+			// console.log(d.getMonth()+1);
+			// console.log(d.getDate());
+			// console.log(d.getHours());
+			// console.log(d.getMinutes());
+			// console.log(d.getSeconds());
+
+
+			/* 案例 */
+			// 写一个函数，格式化日期对象，返回yyyy-MM-dd HH:mm:ss的形式
+			// 			function getDate(date) {
+			// 				// 判断参数date是否是日期对象
+			// 				// console.log(date instanceof Date);  
+			// 				if (!(date instanceof Date)) {
+			// 					console.error('date不是日期对象');
+			// 					return;
+			// 				}
+			// 
+			// 				var year = date.getFullYear(),
+			// 					month = date.getMonth() + 1,
+			// 					day = date.getDate(),
+			// 					hour = date.getHours(),
+			// 					minute = date.getMinutes(),
+			// 					second = date.getSeconds();
+			// 
+			// 				// 为了避免有的数是一个有的数是两位,所有一个数前面补零
+			// 				month = month < 10 ? '0' + month : month;
+			// 				day = day < 10 ? '0' + day : day;
+			// 				hour = hour < 10 ? '0' + hour : hour;
+			// 				minute = minute < 10 ? '0' + minute : minute;
+			// 				second = second < 10 ? '0' + second : second;
+			// 
+			// 				return year + '-' + month + '-' + day + '\t' + hour + ':' + minute + ':' + second;
+			// 			}
+			// 
+			// 			var d = new Date();
+			// 			var dateStr = getDate(d);
+			// 			console.log(dateStr);
+			// 
+			// 			d = new Date(2012, 8, 10);
+			// 			console.log(getDate(d));
+
+
+			// 计算时间差，返回相差的天/时/分/秒
+			// 1.两个日期对象如何相减
+			// var d1 = new Date();
+			// var d2 = new Date(2019, 9, 1);
+			// // d2.valueOf() - d1.valueOf()
+			// console.log(d2 - d1);   //两个时间相差的毫秒数
+
+			// 2.函数如何返回多个值
+			// function fn() {
+			// 	return {
+			// 		year:1.,
+			// 		day:2,
+			// 		hour:3
+			// 	};
+			// }
+
+			// 3.如何计算相差的天/时/秒
+			// 相差的毫秒数 10000000
+			// 相差的总的秒数10000000
+			// 相差的天数 = 10000000/1000/60/60/24
+			// 相差的小时 = 10000000/1000/60/60%24
+			// 相差的分钟 = 10000000/1000/60%60
+			// 相差的秒数 = 10000000/1000%60
+
+			function getInterval(start, end) {
+				//两个日期对象相差的毫秒数
+				var interval = end - start;
+				//求相差的天数/小时数/分钟数/秒数
+				var day, hour, minute, second;
+
+				//两个日期对象相差的秒数
+				interval = interval / 1000;
+
+				day = Math.floor(interval / 60 / 60 / 24);
+				hour = Math.floor(interval / 60 / 60 % 24);
+				minute = Math.floor(interval / 60 % 60);
+				second = Math.floor(interval % 60);
+
+				return {
+					day: day,
+					hour: hour,
+					minute: minute,
+					second: second
+				}
+			}
+
+			var d1 = new Date();
+			var d2 = new Date(2019, 9, 1);
+
+			var o = getInterval(d1, d2);
+			console.log(o);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

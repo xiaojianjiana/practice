@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				list-style-type: none;
+			}
+
+			.box {
+				width: 400px;
+				height: 300px;
+				border: 1px solid #CCCCCC;
+				margin: 100px auto;
+				overflow: hidden;
+			}
+
+			.hd {
+				height: 45px;
+			}
+
+			.hd span {
+				display: inline-block;
+				width: 90px;
+				background-color: skyblue;
+				line-height: 45px;
+				text-align: center;
+				cursor: pointer;
+			}
+
+			.hd .current {
+				background-color: purple;
+			}
+
+			.bd div {
+				height: 255px;
+				background-color: blue;
+				display: none;
+			}
+
+			.bd div.current {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="hd" id="hd">
+				<span class="current">体育</span>
+				<span>娱乐</span>
+				<span>新闻</span>
+				<span>综合</span>
+			</div>
+			<div class="bd" id="bd">
+				<div class="current">我是体育模块</div>
+				<div>我是娱乐模块</div>
+				<div>我是新闻模块</div>
+				<div>我是综合模块</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			// function my$(id) {
+			// 	return document.getElementById(id);
+			// }
+
+
+			//1 鼠标放在tab栏高亮显示,其他tab栏取消高亮
+			var hd = document.getElementById('hd');
+			var spans = document.getElementsByTagName('span');
+			for (var i = 0; i < spans.length; i++) {
+				var span = spans[i];
+				// 注册事件
+				span.onmouseover = fn;
+			}
+
+			// 鼠标经过的事件处理函数
+			function fn() {
+				// 让所有的span取消高亮显示
+				for (var i = 0; i < spans.length; i++) {
+					var span = spans[i];
+					span.className = '';
+				}
+				// 当前的span高亮显示
+				this.className = 'current';
+
+				// 2 tab栏对应的div 显示，其它div隐藏
+				// 所有的div 隐藏
+				var bd = document.getElementById('bd');
+				var divs = bd.getElementsByTagName('div');
+				for (var i = 0; i < divs.length; i++) {
+					var div = divs[i];
+					div.className = '';
+				}
+				// 当前span对应的div显示
+				// 获取自定义属性的值
+				var index = parseInt(this.getAttribute('index'));
+				divs[index].className = 'current';
+
+			}
+		</script>
+	</body>
+</html>
